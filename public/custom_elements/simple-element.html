@@ -1,0 +1,20 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="simple-element" attributes="color">
+	<template>
+		<div id="test">
+			<p>my simple element in {{color}}</p>
+		</div>
+	</template>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+		Polymer('simple-element', {
+			ready: function() {
+				$(this.$.test).css('color', this.color);
+			},
+			color: 'blue'
+		});
+
+	</script>
+
+</polymer-element>

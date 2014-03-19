@@ -1,0 +1,15 @@
+doctype html
+
+html
+    head
+        script(src='/bower_components/platform/platform.js')
+        link(rel='import', href='/custom_elements/simple-element.html')
+        link(rel='import', href='/custom_elements/datetime-picker.html')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body(unresolved)
+        h1 Playing With Polymer
+        simple-element(color="red")
+        simple-element(color="green")
+        simple-element(color="orange")
+        datetime-picker(labelText="My Date Field", id="myDate")
+        datetime-picker(labelText="My Time Field", pickerType="time", id="myTime")

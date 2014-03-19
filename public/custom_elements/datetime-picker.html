@@ -1,0 +1,34 @@
+<!--jQuery plugin site: http://amsul.ca/pickadate.js/ -->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="datetime-picker" attributes="labelText pickerType value">
+	<template>
+		<link rel="stylesheet" href="../javascripts/pickadatejs/themes/default.css" />
+		<link rel="stylesheet" href="../javascripts/pickadatejs/themes/default.date.css"  />
+		<link rel="stylesheet" href="../javascripts/pickadatejs/themes/default.time.css" />
+		<label for="picker" id="pickerLabel">{{labelText}}:</label>
+		<input type="text" id="picker" _value="{{value}}">
+	</template>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../javascripts/pickadatejs/picker.js"></script>
+	<script src="../javascripts/pickadatejs/picker.date.js"></script>
+	<script src="../javascripts/pickadatejs/picker.time.js"></script>
+	<script src="../javascripts/pickadatejs/legacy.js"></script>
+	<script>
+		Polymer('datetime-picker', {
+			ready: function() {
+				if(this.pickerType !== "time") {
+					$(this.$.picker).pickadate();
+				}
+				else {
+					$(this.$.picker).pickatime();
+				}
+			},
+			labelText: "Date",
+			pickerType: "date"
+
+		});
+
+	</script>
+	
+</polymer-element>

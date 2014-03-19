@@ -1,0 +1,70 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+
+<polymer-element name="cool-gallery" attributes="photos">
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bower_components/blueimp-gallery/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="../bower_components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
+
+	<template>
+		<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+	    <div class="slides"></div>
+	    <!-- Controls for the borderless lightbox -->
+	    <h3 class="title"></h3>
+	    <a class="prev">‹</a>
+	    <a class="next">›</a>
+	    <a class="close">×</a>
+	    <a class="play-pause"></a>
+	    <ol class="indicator"></ol>
+	    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+	    <div class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title"></h4>
+		                </div>
+		                <div class="modal-body next"></div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default pull-left prev">
+		                        <i class="glyphicon glyphicon-chevron-left"></i>
+		                        Previous
+		                    </button>
+		                    <button type="button" class="btn btn-primary next">
+		                        Next
+		                        <i class="glyphicon glyphicon-chevron-right"></i>
+		                    </button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</template>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-helper.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-fullscreen.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-indicator.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-video.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-vimeo.js"></script>
+	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-youtube.js"></script>
+	<script>
+        Polymer('cool-gallery', {
+        	ready: function() {
+        	    
+    	        var options = {
+    	            container: $(this.$["blueimp-gallery"]),
+    	            carousel: true
+    	        };
+    	        if(blueimp.Gallery(JSON.parse(this.photos), options)) {
+                    console.log(this.photos);	
+    	        }
+        		
+        	}
+        });
+
+	</script>
+
+
+</polymer-element>
