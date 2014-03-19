@@ -3,7 +3,7 @@
 var galleryApp = ng.module('galleryApp', []);
 
 galleryApp.controller('GalleryCtrl', function ($scope) {
-	$scope.photos = [
+	$scope.items = [
 		{
 		title: 'Sintel',
 		href: 'http://media.w3.org/2010/05/sintel/trailer.mp4',

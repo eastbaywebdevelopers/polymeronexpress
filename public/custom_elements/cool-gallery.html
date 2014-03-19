@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 
-<polymer-element name="cool-gallery" attributes="photos">
+<polymer-element name="cool-gallery" attributes="items">
 	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../bower_components/blueimp-gallery/css/blueimp-gallery.min.css">
 	<link rel="stylesheet" href="../bower_components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
@@ -57,7 +57,7 @@
     	            container: $(this.$["blueimp-gallery"]),
     	            carousel: true
     	        };
-    	        if(blueimp.Gallery(JSON.parse(this.photos), options)) {
+    	        if(blueimp.Gallery(JSON.parse(this.items), options)) {
                     console.log(this.photos);	
     	        }
         		
