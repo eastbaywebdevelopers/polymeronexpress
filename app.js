@@ -38,7 +38,7 @@ app.configure('development', function() {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/photogallery', routes.photogallery);
+app.get('/gallery', routes.gallery);
 app.get('/simpleelement', routes.simpleelement);
 
 http.createServer(app).listen(app.get('port'), function(){
