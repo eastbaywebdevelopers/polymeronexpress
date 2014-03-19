@@ -1,5 +1,14 @@
-extends layout
+doctype html
 
-block content
-  h1= title
-  p Welcome to #{title}
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 Polymer Demonstration
+    p Examples
+    p
+        a(href='/simpleelement/') Simple Elements
+    p
+        a(href='/photogallery/') Photo Gallery
+        
