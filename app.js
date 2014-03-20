@@ -8,7 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
-  , expressBundles = require('express-bundles');
+  , expressBundles = require('express-bundles')
+  , stylus = require('stylus');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 
+app.use(require('stylus').middleware(__dirname + '/public'));
 
 app.use(expressBundles.middleware({
   env: app.get('env'),
@@ -66,7 +68,7 @@ app.use(expressBundles.middleware({
 
 
 app.use(app.router);
-app.use(require('stylus').middleware(__dirname + '/public'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
