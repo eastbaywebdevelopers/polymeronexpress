@@ -7,7 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , expressBundles = require('express-bundles');
 
 var app = express();
 
@@ -21,6 +22,49 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
+
+
+app.use(expressBundles.middleware({
+  env: app.get('env'),
+  src: path.join(__dirname, 'public'),
+  bundles: {
+    'stylesheets/coolgallery.css': [
+      'bower_components/bootstrap/dist/css/bootstrap.min.css',
+      'bower_components/blueimp-gallery/css/blueimp-gallery.min.css',
+      'bower_components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css'
+    ],
+    'stylesheets/style.css': [
+      'stylesheets/style.styl'
+    ],
+    'javascripts/coolgallery.js': [
+      'bower_components/blueimp-gallery/js/blueimp-helper.js',
+      'bower_components/blueimp-gallery/js/blueimp-gallery.js',
+      'bower_components/blueimp-gallery/js/blueimp-gallery-fullscreen.js',
+      'bower_components/blueimp-gallery/js/blueimp-gallery-indicator.js',
+      'bower_components/blueimp-gallery/js/blueimp-gallery-video.js',
+      'bower_components/blueimp-gallery/js/blueimp-gallery-vimeo.js',
+      'bower_components/blueimp-gallery/js/blueimp-gallery-youtube.js'
+    ],
+    'stylesheets/pickadate.css' : [
+        'javascripts/pickadatejs/themes/default.css',
+        'javascripts/pickadatejs/themes/default.date.css',
+        'javascripts/pickadatejs/themes/default.time.css'
+    ],
+    'javascripts/pickadate.js' : [
+        'javascripts/pickadatejs/picker.js',
+        'javascripts/pickadatejs/picker.date.js',
+        'javascripts/pickadatejs/picker.time.js',
+        'javascripts/pickadatejs/legacy.js'
+    ]
+  },
+  hooks: {
+    '.styl': function(file, data, done) {
+      stylus.render(data, done);
+    }
+  }
+}));
+
+
 app.use(app.router);
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));

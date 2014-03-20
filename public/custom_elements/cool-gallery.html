@@ -2,10 +2,8 @@
 
 
 <polymer-element name="cool-gallery" attributes="items">
-	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../bower_components/blueimp-gallery/css/blueimp-gallery.min.css">
-	<link rel="stylesheet" href="../bower_components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
-
+	<link rel="stylesheet" href="../stylesheets/coolgallery.css">
+	
 	<template>
 		<div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
@@ -42,13 +40,8 @@
 		</div>
 	</template>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-helper.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-fullscreen.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-indicator.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-video.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-vimeo.js"></script>
-	<script src="../bower_components/blueimp-gallery/js/blueimp-gallery-youtube.js"></script>
+	<script src="../javascripts/coolgallery.js"></script>
+	
 	<script>
         Polymer('cool-gallery', {
         	ready: function() {
