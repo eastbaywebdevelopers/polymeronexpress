@@ -10,24 +10,27 @@ html
     div(class='reveal')
         div(class='slides')
             section
+                h2 What is a Web Component?
+                p Let's refer to what the W3C 
+                    a(href='http://www.w3.org/TR/components-intro/#introduction', target="_blank") says...
+            section
+                h2 Web Component Benefits
+                ul
+                    li You can create encapsulated units of functionality (components).
+                    li Applications import these units via "HTML Imports," significantly reducing the amount of code (JS, CSS, HTML) that needs to be referenced / included on a page that uses your component's functionality.
+                    li When you change the internals of your component, pages that use your component don't need to be updated unless you modify your component's public API.
+                    li Components are extensible.
+            section
                 h2 What is Polymer?
                 ul 
-                    li A polyfill library for the HTML5 web component specification (most browsers don't support HTML5 Web Components yet).
+                    li A polyfill library for the HTML5 web component specification (since most browsers don't support HTML5 Web Components yet).
                     li Introduced by Google in May 2013.
-            section
-                h2 Polymer Benefits
-                ul
-                    li You can create components, which are encapsulated units of functionality.
-                    li Applications import these units via HTML imports, significantly reducing the amount of code (JS, CSS, HTML) that needs to exist directly on a page that uses your component's functionality.
-                    li When you change the internals of your component, pages that use your component don't need to be updated unless you modify your component's public API.
-                    li You can build components, in large part, declaratively, simplifying component development.
-                    li In addition to the custom components that you can build, the Polymer Project provides a set of predefined components that you can leverage in your applications.
             section
                 h2 Examples
                 p
-                    a(href='/simpleelement/') Simple Elements
+                    a(href='/simpleelement/', target="_blank") Simple Elements
                 p
-                    a(href='/gallery/') Gallery
+                    a(href='/gallery/', target="_blank") Gallery
     script(src='/bower_components/reveal.js/js/reveal.min.js')
     script.
         Reveal.initialize();
