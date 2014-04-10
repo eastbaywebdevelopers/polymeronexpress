@@ -14,3 +14,7 @@ exports.gallery = function(req, res) {
 exports.simpleelement = function(req, res) {
 	res.render('simpleelement', {title: 'Simple Element'});
 };
+
+exports.exampleelement = function(req, res) {
+	res.render('exampleelement', {title: 'Example Elements'});
+};
