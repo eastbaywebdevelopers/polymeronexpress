@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="progress-bar" attributes="color progress">
+	<template>
+	    <div id="wrapper">
+	        <div id="meter"></div>
+	    </div>
+	</template>
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+		Polymer('example2-element', {
+			ready: function() {
+			    var $wrapper = $(this.$.wrapper);
+			    console.log("Progress Bar");
+			    //console.log(this);
+			    /*
+			    if (this.progress > 1) {
+			        //Normalize to 0-1
+			        this.progress = this.progress / 100.0;
+			    }*/
+                //$meter.css("background-color", this.color).width($wrapper.width() * this.progress);
+			},
+			color: "purple",
+			progress: 1
+		});
+	</script>
+	<style>
+	    #meter {
+	        height:100%;
+	    }
+	    #wrapper {
+	        box-sizing:border-box;
+	        height:1em;
+	        width:100%;
+	        min-width:3em;
+	        border:3px solid #CCC;
+	    }
+	</style>
+
+</polymer-element>

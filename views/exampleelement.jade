@@ -2,10 +2,18 @@ doctype html
 
 html
     head
-        script(src='/bower_components/platform/platform.js')
-        link(rel='import', href='/custom_elements/meetup_hack_session/example-element.html')
-        link(rel='import', href='/custom_elements/meetup_hack_session/example2-element.html')
+        script(src='../../bower_components/platform/platform.js')
+        link(rel='import', href='../custom_elements/meetup_hack_session/example-element.html')
+        link(rel='import', href='../custom_elements/meetup_hack_session/progress-bar.html')
+        link(rel='import', href='../custom_elements/meetup_hack_session/example2-element.html')
+        link(rel='import', href='../custom_elements/meetup_hack_session/example3-element.html')
+        link(rel='import', href='../custom_elements/meetup_hack_session/example4-element.html')
+        link(rel='import', href='../custom_elements/meetup_hack_session/example5-element.html')
     body(unresolved)
         h1 Meetup Hack Session
-        example-element
-        example2-element
+        example-element(color="lightgray")
+        example2-element(color="red")
+        example3-element(color="blue")
+        example4-element(colors='aqua fuchsia chucknorris')
+        example5-element(color="green" weight="bold")
+        

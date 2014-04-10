@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="example4-element" attributes="colors">
+	<template>
+	    <ul id='list' repeat="c in colors">
+	        <li>{{c}}</li>
+	    </ul>
+	</template>
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+		Polymer('example4-element', {
+			ready: function() {	
+			    this.colors = this.colors.split(' ');
+			    //var list = $(this.$.list);
+			    //$('li', list).each(function () {
+			    //    console.log(this)
+			    //});
+			}
+		});
+
+	</script>
+
+</polymer-element>

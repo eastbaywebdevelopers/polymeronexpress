@@ -1,12 +1,21 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="example2-element" attributes="">
+<polymer-element name="example2-element" attributes="color">
 	<template>
+	    <div id="root">
+	        <p>This is the sample text in {{color}}</p>
+	        <button id="mybutton">Click me!</button>
+	    </div>
 	</template>
-	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 	<script>
-		Polymer('simple-element', {
-			ready: function() {	}
+		Polymer('example2-element', {
+			ready: function() {
+			    var that = $(this.$.root);
+                $(this.$.root).css("color", this.color);
+                /* that("#mybutton").click(function(){alert("test");}); */
+			},
+			color: "purple"
 		});
 
 	</script>

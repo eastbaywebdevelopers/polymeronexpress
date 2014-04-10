@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="example5-element" attributes="color weight">
+	<template>
+	    <div style="color: {{color}}; font-weight: {{weight}}">
+	        This is some {{weight}} {{color}} text.
+	    </div>
+	</template>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+		Polymer('example5-element', {
+			ready: function() {	}, 
+			color: 'blue',
+			weight: 'normal'
+		});
+
+	</script>
+
+</polymer-element>

@@ -1,14 +1,14 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="example-element" attributes="color">
+<polymer-element name="example3-element" attributes="color">
 	<template>
 	    <div id="test">
-	        <p>This is your sample in {{color}}</p>
+	        <p>This cpks your sample in {{color}}</p>
 	    </div>
 	</template>
 	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 	<script>
-        Polymer('example-element', {
+        Polymer('example3-element', {
 			ready: function() {	
                 $(this.$.test).css("color", this.color);
 			},
